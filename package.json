@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ANCHOR_WALLET=~/.config/solana/id.json node app.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",

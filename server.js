@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(cors());
 // app.use(cors(`http://localhost:3000/`));
 
-app.get('/api/hey',()=>{console.log("hey")})
+// app.get('/api/hey',()=>{console.log("hey")})
 
 //My routes
 app.use('/api', authRoutes);
@@ -47,16 +47,14 @@ app.use('/api', venueRoutes);
 app.use('/api', searchRoutes);
 app.use('/api', ideaRoutes);
 
-const port = process.env.PORT || 8001;
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8002);
 app.use(express.static('./client/build'));
 
-app.listen(8001, () => {
-  console.log(`Listening on Port: ${port}`);
+app.get('/*', (req, res) => {
+  res.sendFile('index.html', { root: __dirname + '/client/build/' });
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build",     
-  "index.html"));
+app.listen(8002, () => {
+  console.log(`Listening on Port: ${port}`);
 });
