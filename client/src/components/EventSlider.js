@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from "@mui/material";
-import '../style/EventSlider.scss';
+import '../style/EventSlider.css';
 import { getAllEventList, getAllSpeakerList, getAllVenueList } from '../apicalls';
 import { API } from '../backend';
 import { Link } from 'react-router-dom';
 import { storeAllEvents, storeAllSpeakers, storeAllVenues } from '../action/action';
 import { useDispatch, useSelector } from 'react-redux';
-
+  
 const slideData = [
     {
       index: 0,
